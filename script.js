@@ -1,12 +1,24 @@
-
+const todaysDay = document.getElementById("currentDay");
 const clock = document.getElementById("clock");
-setInterval(()=>{
-const nowTime = moment();
-const humanReadable = nowTime.format("dddd,MMMM Do YYYY, hh:mm A");
-clock.textContent = humanReadable;
-console.log(humanReadable);
-},1000);
 
+// update function will stop the delay of time
+function updateDay() {
+    const nowTime = moment();
+    const readableDay = nowTime.format("dddd,MMMM Do YYYY");
+    todaysDay.textContent = readableDay;
+}
+
+
+function updateTime (){
+    const nowTime = moment();
+    const readableTime = nowTime.format("hh:mm A");
+    clock.textContent = readableTime;
+    console.log(readableTime);
+}
+setInterval(updateDay, 1000);
+setInterval(updateTime, 1000);
+updateDay()
+updateTime();
 
 
 
