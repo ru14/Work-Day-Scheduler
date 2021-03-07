@@ -1,3 +1,38 @@
+
+const clock = document.getElementById("clock");
+setInterval(()=>{
+const nowTime = moment();
+const humanReadable = nowTime.format("dddd,MMMM Do YYYY, hh:mm A");
+clock.textContent = humanReadable;
+console.log(humanReadable);
+},1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //GIVEN I am using a daily planner to create a schedule
 //WHEN I open the planner
 //THEN the current day is displayed at the top of the calendar
