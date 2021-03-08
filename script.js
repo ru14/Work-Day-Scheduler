@@ -20,6 +20,34 @@ setInterval(updateTime, 1000);
 updateDay()
 updateTime();
 
+function nineAmTime (){
+    const nineAm = document.getElementById("nine"):
+   if (nineAm === updateTime){
+       
+   }
+}
+
+
+
+
+
+
+
+
+// const currentTime = selectedBtn.dataset.present;
+//     if (currentTime === "true") {
+//         bodyElement.classList.add("present");
+//         selectedBtn.classList.add("present");
+//         userScore += 10;
+//         console.log(userScore);
+
+//     }
+//     else {
+//         bodyElement.classList.add("wrong");
+//         selectedBtn.classList.add("wrong");
+//         counter = counter - 15;
+//     }
+// };
 
 
 
