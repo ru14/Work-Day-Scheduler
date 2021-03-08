@@ -11,11 +11,11 @@ function updateDay() {
 }
 
 
-function updateTime (){
+function updateTime() {
     const nowTime = moment();
     const readableTime = nowTime.format("hh:mm A");
     clock.textContent = readableTime;
-    
+
 }
 setInterval(updateDay, 1000);
 setInterval(updateTime, 1000);
@@ -36,28 +36,57 @@ updateTime();
 //        timeBlock.classList.remove(present);
 //        timeBlock.classList.remove(past);
 //    }
-   
+
 //  }
+var elements = document.getElementsByClassName("form-control");
+console.log(elements);
 var format = 'hh:mm A';
-var time = elements[0].dataset.startTime;
-var time = moment(elements[0].dataset.startTime, format);
-elements[0];
-beforeTime = updateTime > time;
-afterTime = updateTime < time;
-console.log("time");
+// forEach(element in elements) {
+//     var time = moment(element.dataset.startTime, format);
+//     console.log(time);
+// }
 
-if (time.isBetween(beforeTime, afterTime)) {
-    const timeBlock = document.getElementById("nineam");
-    timeBlock.classList.add("present");
-    timeBlock.classList.remove("present");
-  console.log('is between')
-
-} 
-for (let time = 0; time < array.length; time++) {
-    const element = array[time];
-    console.log(element)
+for (var item in elements) {
+    var element = elements[item];
+    console.log(element);
+    var startTime = moment(element.dataset.startTime, format);
+    var endTime = moment(startTime).add(59, 'minutes');
+    var currentTime = moment();
+    if (currentTime.isBetween(startTime, endTime)) {
+        // const timeBlock = document.getElementById("nineam");
+        // timeBlock.classList.add("present");
+        // timeBlock.classList.remove("present");
+        console.log('is between');
+        element.classList.add("present");
+    } 
     
+    if (currentTime.isAfter(endTime)){
+        element.classList.add("past");
+    }
+    
+    if (currentTime.isBefore(startTime)) {
+        element.classList.add("future");
+        console.log("future");
+    }
 }
+
+
+// beforeTime = updateTime > time;
+// afterTime = updateTime < time;
+// console.log("time");
+
+// if (time.isBetween(beforeTime, afterTime)) {
+//     const timeBlock = document.getElementById("nineam");
+//     timeBlock.classList.add("present");
+//     timeBlock.classList.remove("present");
+//   console.log('is between')
+
+// } 
+// for (let time = 0; time < array.length; time++) {
+//     const element = array[time];
+//     console.log(element)
+
+// }
 
 
 
@@ -98,8 +127,7 @@ for (let time = 0; time < array.length; time++) {
 
 
 
-var time11 = moment(elements[0].dataset.startTime, format)
-elements[0]
+
 
 
 
