@@ -1,6 +1,5 @@
 const todaysDay = document.getElementById("currentDay");
 const clock = document.getElementById("clock");
-const nineAm = document.getElementById("nine");
 
 
 // update function will stop the delay of time
@@ -28,6 +27,10 @@ var format = 'hh:mm A';
 
 
 for (var item in elements) {
+    if(item == "length"){
+        break;
+    }
+
     var element = elements[item];
     console.log(element);
     var startTime = moment(element.dataset.startTime, format);
