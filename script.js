@@ -22,29 +22,10 @@ setInterval(updateTime, 1000);
 updateDay()
 updateTime();
 
-// function nineAmTime (){
-//     const nineAm = document.getElementById("nine");
-//    if (nineAm === updateTime){
-//     timeBlock.classList.add(present);
-//    }
-//    if (nineAm > updateTime){
-//        timeBlock.classList.add(past);
-//        timeBlock.classList.remove(present);
-//    }
-//    else {
-//        timeBlock.classList.add(future);
-//        timeBlock.classList.remove(present);
-//        timeBlock.classList.remove(past);
-//    }
-
-//  }
 var elements = document.getElementsByClassName("form-control");
 console.log(elements);
 var format = 'hh:mm A';
-// forEach(element in elements) {
-//     var time = moment(element.dataset.startTime, format);
-//     console.log(time);
-// }
+
 
 for (var item in elements) {
     var element = elements[item];
@@ -53,80 +34,15 @@ for (var item in elements) {
     var endTime = moment(startTime).add(59, 'minutes');
     var currentTime = moment();
     if (currentTime.isBetween(startTime, endTime)) {
-        // const timeBlock = document.getElementById("nineam");
-        // timeBlock.classList.add("present");
-        // timeBlock.classList.remove("present");
         console.log('is between');
         element.classList.add("present");
-    } 
-    
-    if (currentTime.isAfter(endTime)){
+    } if (currentTime.isAfter(endTime)) {
         element.classList.add("past");
-    }
-    
-    if (currentTime.isBefore(startTime)) {
+    } if (currentTime.isBefore(startTime)) {
         element.classList.add("future");
         console.log("future");
     }
 }
-
-
-// beforeTime = updateTime > time;
-// afterTime = updateTime < time;
-// console.log("time");
-
-// if (time.isBetween(beforeTime, afterTime)) {
-//     const timeBlock = document.getElementById("nineam");
-//     timeBlock.classList.add("present");
-//     timeBlock.classList.remove("present");
-//   console.log('is between')
-
-// } 
-// for (let time = 0; time < array.length; time++) {
-//     const element = array[time];
-//     console.log(element)
-
-// }
-
-
-
-
-
-
-// const currentTime = selectedBtn.dataset.present;
-//     if (currentTime === "true") {
-//         bodyElement.classList.add("present");
-//         selectedBtn.classList.add("present");
-//         userScore += 10;
-//         console.log(userScore);
-
-//     }
-//     else {
-//         bodyElement.classList.add("wrong");
-//         selectedBtn.classList.add("wrong");
-//         counter = counter - 15;
-//     }
-// };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
