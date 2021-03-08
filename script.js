@@ -19,12 +19,22 @@ setInterval(updateDay, 1000);
 setInterval(updateTime, 1000);
 updateDay()
 updateTime();
-
+const timeBlock =document.getElementById("input-group");
 function nineAmTime (){
-    const nineAm = document.getElementById("nine"):
+    const nineAm = document.getElementById("nine");
    if (nineAm === updateTime){
-       
+    timeBlock.classList.add(present);
    }
+   if (nineAm > updateTime){
+       timeBlock.classList.add(past);
+       timeBlock.classList.remove(present);
+   }
+   else {
+       timeBlock.classList.add(future);
+       timeBlock.classList.remove(present);
+       timeBlock.classList.remove(past);
+   }
+   
 }
 
 
