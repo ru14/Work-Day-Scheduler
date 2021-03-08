@@ -1,6 +1,7 @@
 const todaysDay = document.getElementById("currentDay");
 const clock = document.getElementById("clock");
-const timeblock = document.getElementById("nineam")
+const nineAm = document.getElementById("nine");
+
 
 // update function will stop the delay of time
 function updateDay() {
@@ -21,24 +22,43 @@ setInterval(updateTime, 1000);
 updateDay()
 updateTime();
 
-function nineAmTime (){
-    const nineAm = document.getElementById("nine");
-   if (nineAm === updateTime){
-    timeBlock.classList.add(present);
-   }
-   if (nineAm > updateTime){
-       timeBlock.classList.add(past);
-       timeBlock.classList.remove(present);
-   }
-   else {
-       timeBlock.classList.add(future);
-       timeBlock.classList.remove(present);
-       timeBlock.classList.remove(past);
-   }
+// function nineAmTime (){
+//     const nineAm = document.getElementById("nine");
+//    if (nineAm === updateTime){
+//     timeBlock.classList.add(present);
+//    }
+//    if (nineAm > updateTime){
+//        timeBlock.classList.add(past);
+//        timeBlock.classList.remove(present);
+//    }
+//    else {
+//        timeBlock.classList.add(future);
+//        timeBlock.classList.remove(present);
+//        timeBlock.classList.remove(past);
+//    }
    
- }
+//  }
+
+var time11 = elements[0].dataset.startTime;
 
 
+var format = 'hh:mm A'
+var time = moment(time[0], format);
+  beforeTime = updateTime > time,
+  afterTime = updateTime < time;
+  
+if (time.isBetween(beforeTime, afterTime)) {
+    const timeBlock = document.getElementById("nineam");
+    timeBlock.classList.add("present");
+    timeBlock.classList.remove("present");
+  console.log('is between')
+
+} 
+for (let time = 0; time < array.length; time++) {
+    const element = array[time];
+    console.log(element)
+    
+}
 
 
 
@@ -78,6 +98,9 @@ function nineAmTime (){
 
 
 
+var time11 = elements[0].dataset.startTime;
+var time11 = moment(elements[0].dataset.startTime, format)
+elements[0]
 
 
 
