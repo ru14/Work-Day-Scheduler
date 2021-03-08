@@ -1,5 +1,6 @@
 const todaysDay = document.getElementById("currentDay");
 const clock = document.getElementById("clock");
+const timeblock = document.getElementById("nineam")
 
 // update function will stop the delay of time
 function updateDay() {
@@ -19,7 +20,7 @@ setInterval(updateDay, 1000);
 setInterval(updateTime, 1000);
 updateDay()
 updateTime();
-const timeBlock =document.getElementById("input-group");
+
 function nineAmTime (){
     const nineAm = document.getElementById("nine");
    if (nineAm === updateTime){
@@ -35,7 +36,7 @@ function nineAmTime (){
        timeBlock.classList.remove(past);
    }
    
-}
+ }
 
 
 
