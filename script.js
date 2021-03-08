@@ -15,7 +15,7 @@ function updateTime (){
     const nowTime = moment();
     const readableTime = nowTime.format("hh:mm A");
     clock.textContent = readableTime;
-    console.log(readableTime);
+    
 }
 setInterval(updateDay, 1000);
 setInterval(updateTime, 1000);
@@ -38,15 +38,14 @@ updateTime();
 //    }
    
 //  }
+var format = 'hh:mm A';
+var time = elements[0].dataset.startTime;
+var time = moment(elements[0].dataset.startTime, format);
+elements[0];
+beforeTime = updateTime > time;
+afterTime = updateTime < time;
+console.log("time");
 
-var time11 = elements[0].dataset.startTime;
-
-
-var format = 'hh:mm A'
-var time = moment(time[0], format);
-  beforeTime = updateTime > time,
-  afterTime = updateTime < time;
-  
 if (time.isBetween(beforeTime, afterTime)) {
     const timeBlock = document.getElementById("nineam");
     timeBlock.classList.add("present");
@@ -98,7 +97,7 @@ for (let time = 0; time < array.length; time++) {
 
 
 
-var time11 = elements[0].dataset.startTime;
+
 var time11 = moment(elements[0].dataset.startTime, format)
 elements[0]
 
