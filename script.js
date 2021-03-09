@@ -27,7 +27,7 @@ var format = 'hh:mm A';
 
 
 for (var item in elements) {
-    if(item == "length"){
+    if (item == "length") {
         break;
     }
 
@@ -45,8 +45,22 @@ for (var item in elements) {
         element.classList.add("future");
         console.log("future");
     }
+
+    // populate saved values
+    var savedValue = localStorage.getItem(element.dataset.startTime);
+    if (savedValue !== null){
+        elements[item].value = savedValue;
+    }
 }
 
+function clickActionListener(element, e){
+    e.preventDefault();
+    var startTime = element.dataset.startTime;
+    var inputValue = element.parentElement.previousElementSibling.value;
+    if(inputValue.trim() != ""){
+        localStorage.setItem(startTime, inputValue);
+    }    
+}
 
 
 
